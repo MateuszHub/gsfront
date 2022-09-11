@@ -23,3 +23,9 @@ jobs:
         with:
           push: true
           tags: mateuszhub/react:latest
+      - 
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'frontendgamestore'
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          images: 'mateuszhub/react:latest'

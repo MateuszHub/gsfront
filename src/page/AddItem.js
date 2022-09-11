@@ -1,4 +1,3 @@
-import { Tab, Tabs } from "react-bootstrap";
 import ItemAdd from "../component/ItemAdd";
 
 function AddItem() {

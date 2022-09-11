@@ -9,7 +9,7 @@ import CONSTANTS from "../utils/Constants";
 function OrdersPage() {
     const [orders, setOrders] = useState([]);
     const [keys, setKeys] = useState({})
-    const [user] = useAuth();
+    const {user} = useAuth();
 
     const loadOrders = () => {
         axios.get(`${CONSTANTS.BACKEND_HOST}/orders`, { withCredentials: true })

@@ -6,7 +6,7 @@ const Navigation = (props) => {
     const isUserLogged = () => {
         return user?.name?.length > 0;
     }
-    const [user, _, logout] = useAuth()
+    const {user, logout} = useAuth()
 
     return (<Navbar bg="light" expand="lg">
         <Container>

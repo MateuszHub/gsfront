@@ -18,7 +18,7 @@ function Items() {
         height: 15vw;
         object-fit: cover;
     `
-    const [user] = useAuth();
+    const {user} = useAuth();
     const cart = useContext(CartContext);
 
     const [filters, setFilters] = useState(["active"]);

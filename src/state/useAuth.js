@@ -10,7 +10,7 @@ const useAuth = () => {
         reloadUser();
     }, [])
     const reloadUser = () => {
-        axios.get(`${CONSTANTS.BACKEND_HOST}/users`,  { withCredentials: true })
+        axios.get(`${CONSTANTS.BACKEND_HOST}/users`, { withCredentials: true })
             .then(function (response) {
                 setUser(response.data[0]);
             }).catch(function (error) {
@@ -20,14 +20,14 @@ const useAuth = () => {
     }
     const logout = () => {
         console.log("logged out")
-        axios.get(`${CONSTANTS.BACKEND_HOST}/logout`,  { withCredentials: true })
+        axios.get(`${CONSTANTS.BACKEND_HOST}/logout`, { withCredentials: true })
             .then(function (response) {
-                setUser({name: ""});
+                setUser({ name: "" });
             }).catch(function (error) {
                 // handle error
             });
     }
-    return [user, reloadUser, logout]
+    return { user, reloadUser, logout }
 }
 
 export default useAuth;

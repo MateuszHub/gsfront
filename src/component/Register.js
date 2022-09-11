@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState } from "react";
 import CONSTANTS from "../utils/Constants";
 
@@ -16,6 +15,7 @@ const Register = () => {
                     name="EmailInput"
                     aria-describedby="emailHelp"
                     placeholder="Enter email"
+                    value={email}
                     onChange={(event) => setEmail(event.target.value)}
                 />
             </div>
@@ -26,6 +26,7 @@ const Register = () => {
                     className="form-control"
                     id="exampleInputPassword1"
                     placeholder="Password"
+                    value={password}
                     onChange={(event) => setPassword(event.target.value)}
                 />
             </div>

@@ -15,7 +15,7 @@ function AccountPage() {
         line1: '',
         line2: ''
     });
-    const [user] = useAuth();
+    const {user} = useAuth();
     const loadAddress = () => {
         axios.get(`${process.env.REACT_APP_BACKEND_HOST}/address`,  { withCredentials: true })
             .then(function (response) {

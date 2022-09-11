@@ -1,20 +1,10 @@
-import axios from "axios";
 import { useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import useAuth from "../state/useAuth";
 import CONSTANTS from "../utils/Constants";
 
 const Login = () => {
     const [password, setPassword] = useState("");
     const [email, setEmail] = useState("");
-    const [reloadUser] = useAuth();
-    // const loginSubmit = (e) => {
-    //     e.preventDefault();
-    //     axios.post(`${CONSTANTS.BACKEND_HOST}/login`,  { email: email, password: password }, {useCredentials: true})
-    //         .then(() => {
-    //             reloadUser();
-    //         })
-    // }
 
     return (
         <Row>
@@ -28,6 +18,7 @@ const Login = () => {
                             id="email"
                             name="email"
                             placeholder="Enter email"
+                            value={email}
                             onChange={(event) => setEmail(event.target.value)}
                         />
                     </div>
@@ -39,6 +30,7 @@ const Login = () => {
                             id="password"
                             name="password"
                             placeholder="Password"
+                            value={password}
                             onChange={(event) => setPassword(event.target.value)}
                         />
                     </div>
@@ -61,9 +53,11 @@ const Login = () => {
                     </button>
                 </div>
                 <div className="mt-3">
-                    <button type="submit" className="btn btn-secondary py-2  px-5" >
-                        Login with github
-                    </button>
+                    <a href={`${CONSTANTS.BACKEND_HOST}/login/github`}>
+                        <button type="submit" className="btn btn-secondary py-2  px-5" >
+                            Login with github
+                        </button>
+                    </a>
                 </div>
             </Col>
         </Row>

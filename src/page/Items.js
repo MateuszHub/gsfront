@@ -62,7 +62,7 @@ function Items() {
 
     return (
         <Container fluid>
-            <h2>Items</h2>
+            <h2>Games </h2>
             <Row>
                 <Col>
                     {filterTypes.map((item, index) => (
